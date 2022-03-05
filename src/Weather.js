@@ -4,8 +4,9 @@ import "./Weather.css";
 
 export default function Weather() {
     const [weatherData, setWeatherData] = useState({ ready: false });
-    function bringResponse(reponse){
+    function bringResponse(response) {
     setWeatherData({
+        ready:true,
         temperature: response.data.main.temp,
         wind: response.data.main.wind.speed,
         city: response.data.name,
@@ -13,10 +14,9 @@ export default function Weather() {
         description: response.data.weather[0].description,
         iconUrl: "https://ss1.gstatic.com/onebox/weather/64/partly_clloudy.png"
     });
-    setReady(true);
 }
 
-if (ready) {
+if (weatherData.ready) {
     return (
       <div className="Weather">
             <form> 
