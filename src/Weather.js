@@ -4,7 +4,7 @@ import "./Weather.css";
 
 export default function Weather() {
     const [weatherData, setWeatherData] = useState({ ready: false });
-    function bringResponse(reponse); {
+    function bringResponse(reponse){
     setWeatherData({
         temperature: response.data.main.temp,
         wind: response.data.main.wind.speed,
