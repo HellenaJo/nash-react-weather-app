@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather />
+        <Weather  defaultCity="Uganda"/>
         <footer>
           <a href="https://github.com/nash-react-weather-app" target="_blank">
             open-sourced </a>
