@@ -5,12 +5,14 @@ import Weather from "./Weather";
 export default function App() {
   return (
     <div className="App">
-        <Weather  defaultCity="Uganda"/>
+        <Weather defaultCity="Uganda" />
         <footer>
-          <a href="https://github.com/nash-react-weather-app">
-            open-sourced </a>
+        <a rel="noreferrer"
+          href="https://github.com/nash-react-weather-app" target="_blank">
+        open-sourced
+      </a>
           on github and coded by Hellena.
-        </footer>
+      </footer>
     </div >
  );
 }
