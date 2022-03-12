@@ -7,8 +7,8 @@ export default function App() {
     <div className="App">
         <Weather defaultCity="Uganda" />
         <footer>
-        <a rel="noreferrer"
-          href="https://github.com/nash-react-weather-app" target="_blank">
+        <a 
+          href="https://github.com/nash-react-weather-app rel="noreferrer"" target="_blank">
         open-sourced
       </a>
           on github and coded by Hellena.
