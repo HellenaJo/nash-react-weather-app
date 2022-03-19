@@ -5,20 +5,20 @@ import "./Weather.css";
 import WethaForecast from "./WethaForecast";
 
 export default function Weather(props) {
-    const [weatherData, setWeatherData] = useState(null);
+    const [weatherData, setWeatherData] = useState({ ready: false, });
     const [city, setCity] = useState(props.defaultCity);
 
     function bringResponse(response) {
         setWeatherData({
             ready: true,
-            coordinates:response.data.coord,
+            coordinates: response.data.coord,
             temperature: response.data.main.temp,
             wind: response.data.main.wind.speed,
             city: response.data.name,
             humidity: response.data.main.humidity,
             description: response.data.weather[0].description,
             date: new Date(response.data.dt * 1000),
-            icon: response.data.weather[0].icon,   
+            icon: response.data.weather[0].icon,
         });
     }
 
@@ -38,7 +38,7 @@ export default function Weather(props) {
     }
 
     if (weatherData.ready) {
-        return (
+return (
             <div className="Weather">
                 <form onSubmit={bringSubmit}>
                     <div className="row">
@@ -60,7 +60,7 @@ export default function Weather(props) {
                 <WethaForecast coordinates={weatherData.coordinates} />
             </div>
         );
-    } else {
+    }else {
         search();
         return "Loading..."
     }

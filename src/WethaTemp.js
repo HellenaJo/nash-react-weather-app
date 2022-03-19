@@ -1,15 +1,12 @@
 import React from "react";
 
-export default function WethaTemp() {
+export default function WethaTemp(props) {
   return  (
       <div className="WethaTemp">
-        <span className="temp">{Math.round(fahrenheit)}</span>
-        <span className="units">
-          <a href="/" onClick={convertToCelcius}>
+        <span className="temp">{Math.round(props.celcius)}</span>
+        <span className="unit">
             °C
-          </a> 
         </span>
       </div>
     );
-
 }

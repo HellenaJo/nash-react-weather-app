@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./WethaForecast.css";
 import axios from "axios";
+import WethaForecastDay from "./WethaForecastDay";
 
-export default function WethaForecast() {
+export default function WethaForecast(props) {
     const [loaded, setLoaded] = useState(false);
     const [forecast, setForecast] = useState(null);
 
@@ -23,7 +24,7 @@ export default function WethaForecast() {
                         if (index < 7) {
                             return (
                                 <div className="col" key={index}>
-                                    <WethaForecastDay data={dailyForecast[0]} />
+                                    <WethaForecastDay data={dailyForecast} />
                                 </div>
                             );
                         } else {
