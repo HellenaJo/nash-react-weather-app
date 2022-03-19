@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import WethaTemp from "./WethaTemp";
+import WeatherImg from "./WeatherImg";
 
 export default function WethaInfo(props) {
     return (
@@ -8,7 +9,7 @@ export default function WethaInfo(props) {
             <h1> {props.data.city} </h1>
             <ul className="row">
                 <li>
-                    < FormattedDate date={props.date} />
+                    < FormattedDate date={props.data.date} />
                 </li>
                 <li className="text-capitalize">
                     {props.data.description}
@@ -17,11 +18,9 @@ export default function WethaInfo(props) {
             <div className="row mt-3">
                 <div className="col-6">
                     <div className="clearfix">
-                        <img
-                            src={props.data.imgUrl}
-                            alt={props.data.description}
-                            className="float-left"
-                        />
+                        <div className="float-left">
+                            <WeatherImg code={props.data.icon} size={52} />
+                        </div>
                         <div className="float-left">
                             <WethaTemp celsius={props.data.temperature} />
                         </div>
