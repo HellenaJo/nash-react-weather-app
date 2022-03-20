@@ -1,5 +1,5 @@
 import React from "react";
-import FormattedDate from "./FormattedDate";
+import FormattedDate from "./formattedDate";
 import WethaTemp from "./WethaTemp";
 import WeatherImg from "./WeatherImg";
 
