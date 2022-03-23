@@ -5,7 +5,7 @@ import "./Weather.css";
 import WethaForecast from "./WethaForecast";
 
 export default function Weather(props) {
-    const [weatherData, setWeatherData] = useState({ ready: false, });
+    const [weatherData, setWeatherData] = useState({ ready: false });
     const [city, setCity] = useState(props.defaultCity);
 
     function bringResponse(response) {

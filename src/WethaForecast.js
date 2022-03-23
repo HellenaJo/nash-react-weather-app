@@ -16,9 +16,17 @@ export default function WethaForecast(props) {
         setLoaded(true);
     }
 
+    function load() {
+        let apiKey = "70eb5822db0e7a548a59c84b59fa1550";
+        let latitude = props.coordinates.lat;
+        let longitude = props.coordinates.lon;
+        let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(handleResponse);
+    }
+
     if (loaded) {
         return (
-          <div className="WethaForecast">
+            <div className="WethaForecast">
                 <div className="row">
                     {forecast.map(function (dailyForecast, index) {
                         if (index < 7) {
@@ -31,17 +39,12 @@ export default function WethaForecast(props) {
                             return null;
                         }
                     })}
+                </div>
             </div>
-          </div>
         );
-     
     } else {
-       
-        let apiKey = "70eb5822db0e7a548a59c84b59fa1550";
-        let latitude = props.coordinates.lat;
-        let longitude = props.coordinates.lon;
-        let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-        axios.get(apiUrl).then(handleResponse);
+        load();
+
         return null;
     }
 }
